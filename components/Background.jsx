@@ -5,8 +5,7 @@ import bgpicture1 from "../public/images/hymn_app-bg.jpg";
 
 const background = () => {
   return (
-    <div className={bgwrap} >
-    
+    <div className={bgwrap}>
       <Image
         objectfit="cover"
         src={bgpicture1}
@@ -14,7 +13,6 @@ const background = () => {
         layout="fill"
         priority="true"
       />
-
     </div>
   );
 };

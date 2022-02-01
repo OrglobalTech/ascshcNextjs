@@ -1,4 +1,3 @@
-import Header from "../components/Header";
 import ProgressBar from "../components/ProgressBar";
 import Link from "next/link";
 import Image from "next/image";
@@ -6,7 +5,7 @@ import logo1 from "../public/images/asc_logo_1.png";
 
 export default function Home() {
   return (
-    <div className=" flex  flex-col justify-top bg-fuchsia-800/70  pt-40 h-screen  ">
+    <div className=" flex  flex-col justify-center  pt-40 h-screen  ">
       <div className="text-center">
         <Image
           objectfit="cover"
@@ -18,7 +17,7 @@ export default function Home() {
         />
       </div>
       <div className="text-white text-center ">
-        <h1 className="text-xl font-light ">
+        <h1 className="lg:text-lg text-md font-light ">
           All Saints' Church Supplementary Hymns & Choruses
         </h1>
         <ProgressBar />
