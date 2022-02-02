@@ -2,9 +2,11 @@ import ProgressBar from "../components/ProgressBar";
 import Link from "next/link";
 import Image from "next/image";
 import logo1 from "../public/images/asc_logo_1.png";
+import Meta from "../components/Meta";
 
 export default function Home() {
-  return (
+  return (<>
+<Meta titleHead={"ASCSHC-Intro"}/>
     <div className=" flex  flex-col justify-center  pt-40 h-screen  ">
       <div className="text-center">
         <Image
@@ -17,7 +19,7 @@ export default function Home() {
         />
       </div>
       <div className="text-white text-center ">
-        <h1 className="lg:text-lg text-md font-light ">
+        <h1 className="lg:text-lg text-xl font-light ">
           All Saints' Church Supplementary Hymns & Choruses
         </h1>
         <ProgressBar />
@@ -26,6 +28,9 @@ export default function Home() {
         </button>
       </div>
     </div>
+
+  </>
+    
         
      
   );

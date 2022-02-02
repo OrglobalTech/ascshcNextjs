@@ -3,12 +3,14 @@ import Header from "../components/Header";
 import {server} from '../config/index'
 import HymnItem from "../components/HymnItem";
 import Search from "../components/Search";
+import Meta from "../components/Meta";
 
 
 export default function hymnList({hymns}) {
   const [searchTerm, setSearchTerm] = useState("");
   return (
     <>
+    <Meta titleHead={"ASCSHC-Hymns"}/>
       <Header/>
       <Search setSearchTerm={setSearchTerm}/>
       <div className=" flex p-5 mx-10 max-w-md rounded-xl shadow-2xl  text-center justify-center  bg-white/20 ">  

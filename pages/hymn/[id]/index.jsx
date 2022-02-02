@@ -2,12 +2,15 @@ import React from "react";
 import Link from "next/link";
 import { server } from "../../../config/index";
 import Header from "../../../components/Header";
+import Meta from "../../../components/Meta";
 
 const hymn = ({ hymn }) => {
   
 const lastHymn = 5
 const firstHymn = 1
-  return (
+const titleHymn="ASCSHC"
+  return (<>
+<Meta titleHead= {titleHymn.concat("-",hymn.title) }/>
     <div className="flex flex-col ">
       <Header />
       <div className=" flex flex-row justify-between">
@@ -43,6 +46,9 @@ const firstHymn = 1
         </h6>
       </div>
     </div>
+
+  </>
+    
   );
 };
 
