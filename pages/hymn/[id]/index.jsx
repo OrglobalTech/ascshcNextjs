@@ -4,25 +4,49 @@ import { server } from "../../../config/index";
 import Header from "../../../components/Header";
 
 const hymn = ({ hymn }) => {
+  
+const lastHymn = 5
+const firstHymn = 1
   return (
     <div className="flex flex-col ">
       <Header />
-      <div className="">
-      <button className="bg-white rounded-md px-2 py-1 mb-2 ml-4">
-        <Link href="/hymnList">Back</Link>
-      </button>
+      <div className=" flex flex-row justify-between">
+
+        <button className="bg-white rounded-md px-2 py-1 mb-2 ">
+          {hymn.id == firstHymn ? <Link href="/hymn/[id]" as={`/hymn/${hymn.id}`} >Previous</Link>:<Link href="/hymn/[id]" as={`/hymn/${parseInt(hymn.id)-1}`}>Previous</Link>}
+        </button>
+        <button className="bg-white rounded-md px-2 py-1 mb-2 ">
+          <Link href="/hymnList">Home</Link>
+        </button>
+        <button className="bg-white rounded-md px-2 py-1 mb-2">
+          {hymn.id == lastHymn ? <Link href="/hymn/[id]" as={`/hymn/${hymn.id}`} >Next</Link>:<Link href="/hymn/[id]" as={`/hymn/${parseInt(hymn.id)+1}`}>Next</Link>}
+        </button>
       </div>
-     
-      <div className=" pl-5 pb-5 max-w-md  mx-4 rounded-xl shadow-2xl justify-center  bg-white ">
-        <h1 className="mt-3 text-2xl font-bold text-center text-black whitespace-pre-line">
+
+      <div className=" pl-5 pb-5 pr-5 max-w-md rounded-xl shadow-2xl justify-center  bg-white divide-y-2 divide-solid divide-fuchsia">
+        {/* The hymn id and title */}
+        <h1 className="mt-3 text-3xl font-bold text-center text-black whitespace-pre-line ">
           {hymn.id}. {hymn.title}
         </h1>
-        <p className="text-black whitespace-pre-line">{hymn.body}</p>
+
+        {/* The description and the tune */}
+        <h6 className="mt-3 text-sm text-right text-black whitespace-pre-line px-2 py-4">
+          {hymn.description} | {hymn.tune}
+        </h6>
+
+        {/* The Hymn Body */}
+        <p className="text-black whitespace-pre-line ml-2">{hymn.body}</p>
+
+        {/* Composedby */}
+        <h6 className="mt-3 text-sm text-right text-black whitespace-pre-line p-3">
+          {hymn.composedby}
+        </h6>
       </div>
     </div>
   );
 };
 
+{/* Fetching the data using static props via internal api */}
 export const getStaticProps = async (context) => {
   const res = await fetch(`${server}/api/hymns/${context.params.id}`);
 
@@ -41,8 +65,10 @@ export const getStaticPaths = async () => {
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
 
   return {
+    
     paths,
     fallback: false,
+    
   };
 };
 

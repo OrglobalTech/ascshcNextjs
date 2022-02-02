@@ -11,7 +11,7 @@ export default function hymnList({hymns}) {
     <>
       <Header/>
       <Search setSearchTerm={setSearchTerm}/>
-      <div className=" flex p-5 mx-10 max-w-md rounded-xl shadow-2xl  text-center justify-center  bg-white/80 ">  
+      <div className=" flex p-5 mx-10 max-w-md rounded-xl shadow-2xl  text-center justify-center  bg-white/20 ">  
       <h1 className="text-white text-xl whitespace-pre-line">
 
       {hymns.filter((hymn) => {
@@ -34,7 +34,7 @@ export default function hymnList({hymns}) {
       }
 
 
-      {function handler({query:{id}},res){
+      {/* {function handler({query:{id}},res){
     
     const filtered = hymns.filter(hymn => hymn.id ===id
         )
@@ -44,7 +44,7 @@ export default function hymnList({hymns}) {
             res.status(404).json({message:`Hymn ${id} is not found`})
   
         }
-    }}
+    }} */}
       </h1>      
       </div>
       
