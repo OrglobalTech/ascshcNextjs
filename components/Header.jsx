@@ -17,11 +17,11 @@ const Header = () => {
       </div>
       <div>
         <h1 className="mb-5 lg:text-lg text-xl font-light text-white text-center ">
-          All Saints' Church Supplementary Hymns & Choruses
+          All Saints Church Supplementary Hymns and Choruses
         </h1>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Header;
