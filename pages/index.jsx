@@ -1,4 +1,3 @@
-import React from "react";
 import ProgressBar from "../components/ProgressBar";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,7 +8,7 @@ export default function Home() {
   return (
     <>
       <Meta titleHead={"ASCSHC-Intro"} />
-      <div className=" flex  flex-col justify-center  pt-40 h-screen  ">
+      <div className=" flex  flex-col justify-center items-center py-10   ">
         <div className="text-center">
           <Image
             objectfit="cover"
@@ -26,7 +25,7 @@ export default function Home() {
           </h1>
           <ProgressBar />
           <button className="text-fuchsia-900 py-1 px-5 bg-white rounded-md">
-            <Link href={"/HymnList"}>Proceed</Link>
+            <Link href={"/hymnlist"}>Proceed</Link>
           </button>
         </div>
       </div>

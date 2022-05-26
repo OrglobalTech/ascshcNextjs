@@ -13,11 +13,11 @@ const hymn = ({ hymn }) => {
       <Meta titleHead={titleHymn.concat("-", hymn.title)} />
       <div className="flex flex-col ">
         <Header />
-        <div className=" flex flex-row justify-between">
-          <button className="bg-white rounded-md px-2 py-1 mb-2 ">
+        <div className=" flex flex-row justify-between mx-2">
+          <button className="bg-white text-xs rounded-md px-1 py-1 mb-1 mx-1 ">
             {hymn.id == firstHymn ? (
               <Link href="/hymn/[id]" as={`/hymn/${hymn.id}`}>
-                Previous
+                ...
               </Link>
             ) : (
               <Link href="/hymn/[id]" as={`/hymn/${parseInt(hymn.id) - 1}`}>
@@ -25,13 +25,13 @@ const hymn = ({ hymn }) => {
               </Link>
             )}
           </button>
-          <button className="bg-white rounded-md px-2 py-1 mb-2 ">
-            <Link href="/HymnList">Home</Link>
+          <button className="bg-white text-xs rounded-md px-2 py-1 mb-1 ">
+            <Link href="/hymnlist">Home</Link>
           </button>
-          <button className="bg-white rounded-md px-2 py-1 mb-2">
+          <button className="bg-white text-xs rounded-md px-2 py-1 mb-1">
             {hymn.id == lastHymn ? (
               <Link href="/hymn/[id]" as={`/hymn/${hymn.id}`}>
-                Next
+                ...
               </Link>
             ) : (
               <Link href="/hymn/[id]" as={`/hymn/${parseInt(hymn.id) + 1}`}>
@@ -41,22 +41,22 @@ const hymn = ({ hymn }) => {
           </button>
         </div>
 
-        <div className=" pl-5 pb-5 pr-5 max-w-md rounded-xl shadow-2xl justify-center  bg-white divide-y-2 divide-solid divide-fuchsia">
+        <div className="flex flex-col pl-5 pb-5 pr-5 mx-2 shadow-sm shadow-black justify-start text-white h-[350px] overflow-auto rounded-lg divide-y bg-black/40 divide-fuchsia">
           {/* The hymn id and title */}
-          <h1 className="mt-3 text-3xl font-bold text-center text-black whitespace-pre-line ">
+          <h1 className="mt-3 text-3xl font-bold text-center  whitespace-pre-line ">
             {hymn.id}. {hymn.title}
           </h1>
 
           {/* The description and the tune */}
-          <h6 className="mt-3 text-sm text-right text-black whitespace-pre-line px-2 py-4">
+          <h6 className="mt-3 text-sm text-right  whitespace-pre-line px-2 py-4">
             {hymn.description} | {hymn.tune}
           </h6>
 
           {/* The Hymn Body */}
-          <p className="text-black whitespace-pre-line ml-2">{hymn.body}</p>
+          <p className=" whitespace-pre-line ml-2">{hymn.body}</p>
 
           {/* Composedby */}
-          <h6 className="mt-3 text-sm text-right text-black whitespace-pre-line p-3">
+          <h6 className="mt-3 text-sm text-right  whitespace-pre-line p-3">
             {hymn.composedby}
           </h6>
         </div>

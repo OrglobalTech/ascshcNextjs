@@ -12,7 +12,7 @@ export default function HymnList({ hymns }) {
       <Meta titleHead={"ASCSHC-Hymns"} />
       <Header />
       <Search setSearchTerm={setSearchTerm} />
-      <div className=" flex p-5 mx-10 max-w-md rounded-xl shadow-2xl  text-center justify-center  bg-white/20 ">
+      <div className=" flex p-5 mx-10 max-w-full rounded-xl shadow-2xl  text-center justify-center  ">
         <h1 className="text-white text-xl whitespace-pre-line">
           {hymns.filter((hymn) => {
               if (searchTerm === "") {
